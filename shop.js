@@ -1,3 +1,5 @@
+// Need to make a new file named shop.json. Look for a tutorial in order to make the shop.json
+
 const fs = require('fs');
 module.exports = {
   name: "shop",
@@ -9,7 +11,7 @@ module.exports = {
     let page = shop_data.pages[index];
 
     if(!page) {
-      return message.channel.send("Page was not found!")
+      return message.channel.send("Page was not found!") // error message pops up if you enter an invalid page number
     }
 
     const shop = new Discord.MessageEmbed()
