@@ -5,7 +5,7 @@ module.exports = {
     description: "Check the user balance",
     cooldown: 10,
 
-    async execute(//Enter Your Parameters.) {
+    async execute(client, message, args, cmd, profileData, Discord) {
         if(cmd === 'balance') {
            //An embed to show your balance
         const newEmbed = new Discord.MessageEmbed()
