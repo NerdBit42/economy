@@ -1,2 +1,4 @@
 # economy
-Economy bot commands
+Economy bot commands. For discord.js
+
+
