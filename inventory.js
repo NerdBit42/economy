@@ -1,9 +1,9 @@
 module.exports = {
     name: "inventory",
     descritption: "Shows the inventory",
-    aliases: ['inv'],
-    cooldown: 5,
-    async execute(message, args, client, Discord, ProfileData, user, userQuery){
+    aliases: ['inv'], //learn more about aliases in message.js
+    cooldown: 5, //learn about cooldowns in message.js
+    async execute(client, message, args, cmd, user, userQuery, Discord) {
       if(cmd === 'inventory'){
       let temp_items = user.inventory.map(item => item.name);
       let items = [];
@@ -18,14 +18,14 @@ module.exports = {
       });
   
       items = items.map(item => `**${item.name}** x\`${item.amount}\``)
-  
+
       const inventory = new Discord.MessageEmbed()
       .setColor('RANDOM')
       .setTitle("Inventory")
       .setAuthor(message.author.username, message.author.avatarURL())
       .setDescription(`${items.join('\n\t')}`)
   
-      await message.channel.send(inventory);
+      await message.channel.send(inventory); //sends the embed
   
     }
     if(cmd === 'inv') {
