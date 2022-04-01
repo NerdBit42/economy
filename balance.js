@@ -5,10 +5,11 @@ module.exports = {
     description: "Check the user balance",
     cooldown: 10,
 
-    execute(message, args, cmd, client, discord, profileData) {
+    async execute(//Enter Your Parameters.) {
         if(cmd === 'balance') {
+           //An embed to show your balance
         const newEmbed = new Discord.MessageEmbed()
-    .setColor('RANDOM')
+    .setColor('') //you can set it to any color. Make sure to put it in hex code.
     .setTitle('Balance')
     .addFields(
     {
@@ -19,9 +20,10 @@ module.exports = {
         name: 'Bank',
         value:`${profileData.bank}`
         })
+        message.channel.send(newEmbed)
         }
         if(cmd === 'bal') {
-            const newEmbed = new Discord.MessageEmbed()
+            const balEmbed = new Discord.MessageEmbed()
             .setColor('RANDOM')
             .setTitle('Balance')
             .addFields(
@@ -33,6 +35,7 @@ module.exports = {
                 name: 'Bank',
                 value:`${profileData.bank}`
                 })
+            message.channel.send(balEmbed)
         }
     }
 }
